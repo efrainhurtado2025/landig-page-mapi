@@ -1,0 +1,348 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--white);
+    padding-top: 80px;
+}
+
+.hero-bg-shapes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.hero-bg-shapes .shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+}
+
+.hero-bg-shapes .shape-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--primary);
+    top: -100px;
+    right: -100px;
+}
+
+.hero-bg-shapes .shape-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--accent-orange);
+    bottom: 100px;
+    left: -50px;
+}
+
+.hero-bg-shapes .shape-3 {
+    width: 200px;
+    height: 200px;
+    background: var(--accent-yellow);
+    bottom: -50px;
+    right: 30%;
+}
+
+.hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 580px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(245, 73, 39, 0.08);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 24px;
+}
+
+.hero-badge .badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 20px;
+    color: var(--gray-900);
+}
+
+.hero-title .highlight {
+    color: var(--primary);
+    position: relative;
+}
+
+.hero-title .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(245, 73, 39, 0.15);
+    border-radius: 4px;
+    z-index: -1;
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    color: var(--gray-500);
+    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 480px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--gray-200);
+}
+
+.hero-stat .stat-number {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.hero-stat .stat-label {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+    margin-top: 2px;
+}
+
+/* Hero Visual / Right side */
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-card-stack {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+}
+
+.hero-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--gray-200);
+}
+
+.hero-card-main {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-card-main .card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.hero-card-main .card-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--primary-gradient);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+.hero-card-main .card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.hero-card-main .card-subtitle {
+    font-size: 0.8rem;
+    color: var(--gray-400);
+}
+
+.hero-card-main .card-subjects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.hero-card-main .subject-tag {
+    padding: 6px 14px;
+    background: var(--gray-50);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--gray-600);
+    border: 1px solid var(--gray-200);
+}
+
+.hero-card-main .card-progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hero-card-main .progress-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--gray-100);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.hero-card-main .progress-fill {
+    height: 100%;
+    background: var(--primary-gradient);
+    border-radius: var(--radius-full);
+    width: 85%;
+}
+
+.hero-card-main .progress-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.hero-floating-card {
+    position: absolute;
+    z-index: 3;
+}
+
+.hero-floating-card.card-top {
+    top: -20px;
+    right: -30px;
+    padding: 14px 20px;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid var(--gray-100);
+}
+
+.hero-floating-card.card-top .check-icon {
+    width: 28px;
+    height: 28px;
+    background: #22C55E;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.hero-floating-card.card-bottom {
+    bottom: -15px;
+    left: -30px;
+    padding: 16px 22px;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--gray-100);
+}
+
+.hero-floating-card.card-bottom .rating-stars {
+    color: #FBBF24;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.hero-floating-card.card-bottom .rating-text {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+}
+
+.hero-floating-card.card-bottom .rating-text strong {
+    color: var(--gray-800);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        margin-top: 40px;
+    }
+
+    .hero-card-stack {
+        max-width: 380px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-stats {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .hero-floating-card.card-top {
+        right: -10px;
+    }
+
+    .hero-floating-card.card-bottom {
+        left: -10px;
+    }
+}
